@@ -21,10 +21,6 @@ from .base import Num2Word_Base
 
 
 class Num2Word_TA(Num2Word_Base):
-    def set_high_numwords(self, high):
-        for n, word in self.high_numwords:
-            self.cards[10 ** n] = word
-
     def setup(self):
         self.low_numwords = [
             "பூஜ்ஜியம்",
@@ -74,6 +70,15 @@ class Num2Word_TA(Num2Word_Base):
             "எண்பது",
             "தொன்னூறு"
         ]
+
+        self.high_numwords = []
+        self.mid_numwords = []
+
+    def set_high_numwords(self, high_numwords):
+        pass
+
+    def set_mid_numwords(self, mid_numwords):
+        pass
 
     def merge(self, lpair, rpair):
         ltext, lnum = lpair

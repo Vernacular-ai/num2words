@@ -111,6 +111,7 @@ Besides the numerical argument, there are two main optional arguments.
 * ``ro`` (Romanian)
 * ``ru`` (Russian)
 * ``sl`` (Slovene)
+* ``ta`` (Tamil)
 * ``tr`` (Turkish)
 * ``th`` (Thai)
 * ``vi`` (Vietnamese)

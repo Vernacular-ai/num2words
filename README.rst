@@ -99,6 +99,7 @@ Besides the numerical argument, there are two main optional arguments.
 * ``kn`` (Kannada)
 * ``lt`` (Lithuanian)
 * ``lv`` (Latvian)
+* ``mr`` (Marathi)
 * ``no`` (Norwegian)
 * ``pl`` (Polish)
 * ``pt`` (Portuguese)

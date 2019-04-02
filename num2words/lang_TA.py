@@ -21,6 +21,12 @@ from .base import Num2Word_Base
 
 
 class Num2Word_TA(Num2Word_Base):
+    def __init__(self):
+        super().__init__()
+        # HACK: To be safe, we are clipping at 100, will be
+        #       adding proper rules for higher numbers
+        self.MAXVAL = 101
+
     def setup(self):
         # NOTE: There is a definite pattern that can be exploited here but
         #       we are going with hardcoded words til 100 for now.

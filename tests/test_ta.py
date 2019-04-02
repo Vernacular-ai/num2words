@@ -21,23 +21,29 @@ from num2words import num2words
 
 class Num2WordsTATest(TestCase):
     def test_cardinal(self):
-        self.assertEqual(num2words(2, lang="ta"), "இரண்டு")
-        self.assertEqual(num2words(7, lang="ta"), "ஏழு")
-        self.assertEqual(num2words(8, lang="ta"), "எட்டு")
-        self.assertEqual(num2words(20, lang="ta"), "இருபத்து")
-        self.assertEqual(num2words(22, lang="ta"), "இருபத்திரண்டு")
-        self.assertEqual(num2words(24, lang="ta"), "இருபத்தினாங்கு")
-        self.assertEqual(num2words(50, lang="ta"), "அம்பது")
-        self.assertEqual(num2words(60, lang="ta"), "அறுபது")
-        self.assertEqual(num2words(70, lang="ta"), "எழுபத்து")
-        self.assertEqual(num2words(80, lang="ta"), "எண்பது")
-        self.assertEqual(num2words(82, lang="ta"), "எண்பத்திதரண்டு")
-        self.assertEqual(num2words(200, lang="ta"), "இருநூறு")
-        self.assertEqual(num2words(600, lang="ta"), "அறுநூறு")
-        self.assertEqual(num2words(700, lang="ta"), "எழுநூறு")
-        self.assertEqual(num2words(1000, lang="ta"), "ஆயிரம்")
-        self.assertEqual(num2words(2000, lang="ta"), "இரண்டாயிரம்")
-        self.assertEqual(num2words(6000, lang="ta"), "ஆறாயிரம்")
-        self.assertEqual(num2words(7000, lang="ta"), "ஏழாயிரம்")
-        self.assertEqual(num2words(8000, lang="ta"), "எட்டாயிரம்")
-        self.assertEqual(num2words(100000, lang="ta"), "இலட்சம்")
+        lang_code = "ta"
+        items = [
+            (2, "இரண்டு"),
+            (7, "ஏழு"),
+            (8, "எட்டு"),
+            (20, "இருபது"),
+            (22, "இருபத்தி இரண்டு"),
+            (24, "இருபத்தி நான்கு"),
+            (50, "ஐம்பது"),
+            (60, "அறுபது"),
+            (70, "எழுபது"),
+            (80, "எண்பது"),
+            (82, "எண்பத்தி இரண்டு"),
+            (200, "இருநூறு"),
+            (600, "அறுநூறு"),
+            (700, "எழுநூறு"),
+            (1000, "ஆயிரம்"),
+            (2000, "இரண்டாயிரம்"),
+            (6000, "ஆறாயிரம்"),
+            (7000, "ஏழாயிரம்"),
+            (8000, "எட்டாயிரம்"),
+            (100000, "லட்சம்")
+        ]
+
+        for num, word in items:
+            self.assertEqual(num2words(num, lang=lang_code), word)

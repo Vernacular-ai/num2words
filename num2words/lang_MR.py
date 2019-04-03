@@ -134,10 +134,12 @@ class Num2Word_MR(Num2Word_Base):
         pass
 
     def to_cardinal(self, value: int) -> str:
-        basic_cardinal = super().to_cardinal(value)
-        # We are doing this again instead of being smart in merge fn because we
-        # don't want to spoil the cards
-        return re.sub("^शे", "शंभर", basic_cardinal, flags=re.U)
+        if value == 100:
+            # This is to cover more common way of saying 100
+            return self.cards[value]
+        else:
+            basic_cardinal = super().to_cardinal(value)
+            return re.sub("शंभर", "शे", basic_cardinal, flags=re.U)
 
     def merge(self, lpair, rpair):
         ltext, lnum = lpair
@@ -145,8 +147,6 @@ class Num2Word_MR(Num2Word_Base):
         if lnum == 1 and rnum < 100:
             return (rtext, rnum)
         else:
-            # Non ending 100 is different
-            ltext = re.sub("शंभर$", "शे", ltext, flags=re.U)
             if lnum >= 100 > rnum:
                 return ("%s %s" % (ltext, rtext), lnum + rnum)
             elif rnum > lnum:

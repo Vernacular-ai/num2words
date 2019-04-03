@@ -20,18 +20,25 @@ from unittest import TestCase
 from num2words import num2words
 
 
-class Num2WordsMRTest(TestCase):
+class Num2WordsGUTest(TestCase):
     def test_cardinal(self):
-        lang_code = "mr"
+        lang_code = "gu"
         items = [
-            (72, "बाहत्तर"),
-            (100, "शंभर"),
-            (200, "दोन शे"),
-            (202, "दोन शे दोन"),
-            (2019, "दोन हजार एकोणीस")
+            (72, "બોતેર"),
+            (100, "સો"),
+            (179, "એક સો ઓગણાએંસી"),
+            (200, "બે સો"),
+            (202, "બે સો બે"),
+            (523, "પાંચ સો તેવીસ"),
+            (729, "સાત સો ઓગણત્રીસ"),
+            (1000, "એક હજાર"),
+            (1111, "એક હજાર એક સો અગિયાર"),
+            (1072, "એક હજાર બોતેર"),
+            (2019, "બે હજાર ઓગણિસ"),
+            (10000, "દસ હજાર")
         ]
         skipped_items = [
-            (1000000000, "शंभर कोटी")
+            (1000000000, "સો કરોડ઼")
         ]
 
         for num, word in items:

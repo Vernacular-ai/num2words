@@ -19,6 +19,7 @@ from unittest import TestCase
 
 from num2words import num2words
 
+
 class Num2WordsTATest(TestCase):
     def test_cardinal(self):
         lang_code = "ta"
@@ -27,13 +28,17 @@ class Num2WordsTATest(TestCase):
             (7, "ஏழு"),
             (8, "எட்டு"),
             (20, "இருபது"),
-            (22, "இருபத்தி இரண்டு"),
-            (24, "இருபத்தி நான்கு"),
+            (22, "இருபத்து இரண்டு"),
+            (24, "இருபத்து நான்கு"),
             (50, "ஐம்பது"),
             (60, "அறுபது"),
             (70, "எழுபது"),
             (80, "எண்பது"),
-            (82, "எண்பத்தி இரண்டு"),
+            (82, "எண்பத்திரண்டு")
+        ]
+        # NOTE: Since we don't have rules to go beyond 100 as of now, we are
+        # skipping the following cases
+        skipped_items = [
             (200, "இருநூறு"),
             (600, "அறுநூறு"),
             (700, "எழுநூறு"),

@@ -19,13 +19,18 @@ from unittest import TestCase
 
 from num2words import num2words
 
+
 class Num2WordsMRTest(TestCase):
     def test_cardinal(self):
         lang_code = "mr"
         items = [
             (72, "बाहत्तर"),
             (200, "दोन शंभर"),
-            (202, "दोन शे दोन")
+            (202, "दोन शे दोन"),
+            (2019, "दोन हजार एकोणीस"),
+            # TODO: This is incorrect, the right way to say this is शंभर कोटी
+            #       but we will keep this form for now
+            (1000000000, "एक शे कोटी")
         ]
 
         for num, word in items:

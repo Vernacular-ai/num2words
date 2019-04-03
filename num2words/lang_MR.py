@@ -18,6 +18,7 @@
 from __future__ import unicode_literals
 
 import re
+
 from .base import Num2Word_Base
 
 
@@ -131,6 +132,12 @@ class Num2Word_MR(Num2Word_Base):
 
     def set_high_numwords(self, high_numwords):
         pass
+
+    def to_cardinal(self, value: int) -> str:
+        basic_cardinal = super().to_cardinal(value)
+        # We are doing this again instead of being smart in merge fn because we
+        # don't want to spoil the cards
+        return re.sub("^शे", "शंभर", basic_cardinal, flags=re.U)
 
     def merge(self, lpair, rpair):
         ltext, lnum = lpair

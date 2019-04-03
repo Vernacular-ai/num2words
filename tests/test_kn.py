@@ -24,9 +24,9 @@ from num2words import num2words
 class Num2WordsKNTest(TestCase):
     def test_numbers(self):
         self.assertEqual(num2words(42, lang="kn"), u"ನಲವತ್ತ್ ಎರಡು")
-        self.assertEqual(num2words(893, lang="kn"), u"ಎಂಟು ನೂರು ತೊಂಬತ್ತ ಮೂರು")
+        self.assertEqual(num2words(893, lang="kn"), u"ಎಂಟು ನೂರ ತೊಂಬತ್ತ ಮೂರು")
         self.assertEqual(
-            num2words(1729, lang="kn"), u"ಒಂದು ಸಾವಿರ ಏಳು ನೂರು ಇಪ್ಪತ್ತ್ಒಂಬತ್ತು"
+            num2words(1729, lang="kn"), u"ಒಂದು ಸಾವಿರದ ಏಳು ನೂರ ಇಪ್ಪತ್ತ್ಒಂಬತ್ತು"
         )
 
     def test_ordinals(self):

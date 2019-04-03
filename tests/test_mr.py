@@ -25,12 +25,13 @@ class Num2WordsMRTest(TestCase):
         lang_code = "mr"
         items = [
             (72, "बाहत्तर"),
-            (200, "दोन शंभर"),
+            (100, "शंभर"),
+            (200, "दोन शे"),
             (202, "दोन शे दोन"),
-            (2019, "दोन हजार एकोणीस"),
-            # TODO: This is incorrect, the right way to say this is शंभर कोटी
-            #       but we will keep this form for now
-            (1000000000, "एक शे कोटी")
+            (2019, "दोन हजार एकोणीस")
+        ]
+        skipped_items = [
+            (1000000000, "शंभर कोटी")
         ]
 
         for num, word in items:

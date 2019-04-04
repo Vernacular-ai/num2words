@@ -1113,7 +1113,7 @@ class Num2Word_TE(Num2Word_Base):
         except (ValueError, TypeError, AssertionError):
             return self.to_cardinal_float(value)
 
-        if 0 <= value < 1000:
+        if 0 <= value < len(self.corpus):
             return self.corpus[value]
 
         elif value in self.years.keys():

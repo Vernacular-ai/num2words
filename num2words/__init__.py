@@ -22,7 +22,7 @@ from . import (lang_AR, lang_CZ, lang_DE, lang_DK, lang_EN, lang_EN_IN,
                lang_FR_CH, lang_FR_DZ, lang_GU, lang_HE, lang_HI, lang_HI_EN,
                lang_ID, lang_IT, lang_JA, lang_KN, lang_KO, lang_LT, lang_LV,
                lang_MR, lang_NL, lang_NO, lang_PL, lang_PT, lang_PT_BR,
-               lang_RO, lang_RU, lang_SL, lang_SR, lang_TA, lang_TH, lang_TR,
+               lang_RO, lang_RU, lang_SL, lang_SR, lang_TA, lang_TE, lang_TH, lang_TR,
                lang_UK, lang_VI)
 
 CONVERTER_CLASSES = {
@@ -62,6 +62,7 @@ CONVERTER_CLASSES = {
     'it': lang_IT.Num2Word_IT(),
     'vi': lang_VI.Num2Word_VI(),
     'ta': lang_TA.Num2Word_TA(),
+    'te': lang_TE.Num2Word_TE(),
     'th': lang_TH.Num2Word_TH(),
     'tr': lang_TR.Num2Word_TR(),
     'nl': lang_NL.Num2Word_NL(),
